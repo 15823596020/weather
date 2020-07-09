@@ -23,7 +23,7 @@ class TestWeather:
         self.api = '/data/cityinfo'
         self.client = HttpClient()  # 实例化工具类HttpClient类
 
-    @pytest.mark.parametrize('city_code, exp_city', [("101280601", "深圳"), ("1010401001", "重庆"), ("101010100", "北京"), ("101020100", "上海")])
+    @pytest.mark.parametrize('city_code, exp_city', [("101280601", "深圳"), ("101040100", "重庆"), ("101010100", "北京"), ("101020100", "上海")])
     def test_weather(self, city_code, exp_city):
         url = f'{self.host}{self.api}/{city_code}.html'  # 拼接url
         response = self.client.Get(url=url)  # 发起get请求
